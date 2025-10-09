@@ -26,7 +26,7 @@ with col2:
     # Fügt vertikalen Leerraum hinzu, um den Text besser auszurichten
     st.write("")
     st.write("")
-    st.header("Grüße von KFB3!")
+    st.header("Alles für den KFB!")
 
 
 st.title("🏀 Mannschaftskasse aufpolieren!")
@@ -72,4 +72,5 @@ st.info(
     Vielen Dank für die Unterstützung!
     """
 )
+
 
