@@ -71,3 +71,5 @@ st.info(
     erhält unsere Mannschaftskasse eine kleine Provision von Amazon, ohne dass für euch Mehrkosten entstehen.
     Vielen Dank für die Unterstützung!
     """
+)
+
