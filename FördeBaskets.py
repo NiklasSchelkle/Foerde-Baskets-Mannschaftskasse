@@ -5,20 +5,31 @@ from PIL import Image
 # --- SEITENKONFIGURATION ---
 st.set_page_config(
     page_title="Mannschaftskasse Aufpolierer",
-    page_icon="⚽",
+    page_icon="🏀",
     layout="centered"
 )
 
 # --- BILD UND TITEL ---
 
-# Öffnen des Bildes
-try:
-    image = Image.open('KFB3.jpg')
-    st.image(image, use_column_width=True)
-except FileNotFoundError:
-    st.error("Fehler: Die Bilddatei 'KFB3.jpg' wurde nicht gefunden. Bitte stellen Sie sicher, dass die Datei im selben Ordner wie das Skript liegt.")
+# Spalten-Layout, um Bild und Text nebeneinander zu platzieren
+col1, col2 = st.columns([1, 2])
 
-st.title("⚽ Mannschaftskasse aufpolieren!")
+with col1:
+    try:
+        image = Image.open('KFB3.jpg')
+        # Kein 'use_container_width', damit das Bild kleiner bleibt
+        st.image(image)
+    except FileNotFoundError:
+        st.error("Bild 'KFB3.jpg' nicht gefunden.")
+
+with col2:
+    # Fügt vertikalen Leerraum hinzu, um den Text besser auszurichten
+    st.write("")
+    st.write("")
+    st.header("Grüße von KFB3!")
+
+
+st.title("🏀 Mannschaftskasse aufpolieren!")
 st.markdown("Generiert für jeden Einkauf über Amazon einen kleinen Bonus für die Teamkasse.")
 
 
@@ -31,7 +42,7 @@ affiliate_tag = "affiliatesche-21" # Diesen bei Bedarf anpassen
 # Eingabefeld für das Produkt
 search_term = st.text_input(
     "Was möchtet ihr bei Amazon suchen?",
-    placeholder="z.B. Nike Fußball, Taktiktafel, etc."
+    placeholder="z.B. Nike Basketball, Taktiktafel, etc."
 )
 
 # Button zum Generieren
@@ -60,4 +71,3 @@ st.info(
     erhält unsere Mannschaftskasse eine kleine Provision von Amazon, ohne dass für euch Mehrkosten entstehen.
     Vielen Dank für die Unterstützung!
     """
-)
