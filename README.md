@@ -134,8 +134,6 @@ OPENAI_MODEL=gpt-4o-mini
 
 ```
 ### 3 Choose: Old Way (Environment set up) or Easy start with Docker
-```
-```
 ### 🐳 Docker: Easy Start (Recommended)
 
 To avoid dependency conflicts and ensure a consistent environment. This method bypasses the need for manual Python environment setup.
@@ -147,9 +145,8 @@ Ensure your .env file is present in the root directory, then run:
 ```bash
 docker-compose up --build -d
 ```
-```
 Just be patient. It takes up to 13 minutes (we are using transformers & torch)
-```
+
 ### 2. Initialize Data (Scraping & Embedding)
 
 The database has an very old input on the first start. Trigger the ingestion script inside the container to scrape fresh NASDAQ data and build the vector store (It takes like 3 min):
@@ -161,9 +158,6 @@ docker exec -it smol_quant_app python data_ingestion/data_scraping_embedding.py
 
 Open your browser at: 👉 http://localhost:8501
 
-```
-
-```
 ### Environment Setup
 
 ### 1. Choose your device
